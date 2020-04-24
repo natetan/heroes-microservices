@@ -1,21 +1,21 @@
-const heroes = require('express').Router();
+const router = require('express').Router();
 
 const heroesData = require('../../data/heroes.json');
 const powers = require('../../data/powers.json');
 
 const port = process.argv.slice(2)[0];
 
-heroes.get('/', (req, res) => {
+router.get('/', (req, res) => {
   console.log('Returning heroes list');
   res.send(heroesData);
 });
 
-heroes.get('/powers', (req, res) => {
+router.get('/powers', (req, res) => {
   console.log('Returning powers list');
   res.send(powers);
 });
 
-heroes.post('/hero/**', (req, res) => {
+router.post('/hero/**', (req, res) => {
   const heroId = parseInt(req.params[0]);
   const foundHero = heroesData.find(subject => subject.id === heroId);
 
@@ -33,4 +33,4 @@ heroes.post('/hero/**', (req, res) => {
   }
 });
 
-module.exports = heroes;
+module.exports = router;
