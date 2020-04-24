@@ -1,13 +1,11 @@
 {
-  "name": "microservices",
+  "name": "heroes",
   "version": "1.0.0",
-  "description": "Building Microservices with Node.js",
+  "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Nate Tan",
   "license": "ISC",
   "dependencies": {
